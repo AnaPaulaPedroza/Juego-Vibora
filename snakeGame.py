@@ -40,9 +40,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, "black")
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, colors[colorFood])
     update()
     ontimer(move, 100)
 
@@ -51,6 +51,8 @@ bgcolor('#F8F8FF')
 hideturtle()
 tracer(False)
 listen()
+colors = ["black", "green", "blue", "yellow", "#FFA501"]
+colorFood = randrange(0,4)
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
