@@ -48,7 +48,7 @@ hideturtle()
 tracer(False)
 listen()
 bgcolor('#F8F8FF')
-colors_list = ['magenta', 'yellow', 'aquamarine', 'purple', 'pink']
+colors_list = ['magenta', 'blue', 'aquamarine', 'purple', 'pink']
 colorSnake = randrange(0,4)
 colorFood = randrange(0,4)
 onkey(lambda: change(10, 0), 'Right')
