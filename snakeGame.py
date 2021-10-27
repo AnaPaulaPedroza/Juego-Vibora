@@ -1,12 +1,10 @@
 from turtle import *
-from random import choice, randrange
+from random import randrange
 from freegames import square, vector
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-colors_list = ['magenta', 'yellow', 'aquamarine', 'purple', 'pink']
-colorSnake = choice(colors_list)
 
 def change(x, y):
     "Change snake direction."
@@ -19,7 +17,6 @@ def inside(head):
 
 def move():
     "Move snake forward one segment."
-    global colorSnake, food
     head = snake[-1].copy()
     head.move(aim)
 
@@ -34,26 +31,25 @@ def move():
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
-        colorSnake = colorFood
-        colorFood = choice(colors_list)
     else:
         snake.pop(0)
 
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, "black")
+        square(body.x, body.y, 9, colors_list[colorSnake])
 
-    square(food.x, food.y, 9, colors[colorFood])
+    square(food.x, food.y, 9, colors_list[colorFood])
     update()
     ontimer(move, 100)
 
 setup(420, 420, 370, 0)
-bgcolor('#F8F8FF')
 hideturtle()
 tracer(False)
 listen()
-colors = ["black", "green", "blue", "yellow", "#FFA501"]
+bgcolor('#F8F8FF')
+colors_list = ['magenta', 'yellow', 'aquamarine', 'purple', 'pink']
+colorSnake = randrange(0,4)
 colorFood = randrange(0,4)
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
