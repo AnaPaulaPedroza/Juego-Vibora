@@ -4,7 +4,7 @@
 ### Instrucciones
 Uno de los dos creará un repositorio con el videojuego copiado y se lo compartirá al otro compañero
 
-###### Uno de los dos hará que:
+##### Uno de los dos hará que:
 
 La comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana
 
