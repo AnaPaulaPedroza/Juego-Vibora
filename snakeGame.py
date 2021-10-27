@@ -26,11 +26,13 @@ def move():
         return
 
     snake.append(head)
+    # Cada que la víbora avance, la comida también se moverá.
+    food.x = randrange(-8, 8) * 10 
+    food.y = randrange(-8, 8) * 10
 
     if head == food:
         print('Snake:', len(snake))
-        food.x = randrange(-15, 15) * 10
-        food.y = randrange(-15, 15) * 10
+        
     else:
         snake.pop(0)
 
